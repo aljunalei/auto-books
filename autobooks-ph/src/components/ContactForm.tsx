@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Mail, Phone, MapPin, CheckCircle } from 'lucide-react'
-import Button from './ui/Button'
+import Button from '@/components/ui/Button';
 
 interface ContactFormData {
   name: string

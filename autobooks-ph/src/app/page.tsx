@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { Mail, Phone, MapPin, CheckCircle, BarChart3, FileText, TrendingUp, Shield ,icons } from 'lucide-react';
 import ServiceCard from '@/components/ui/ServiceCard';
 import { title } from 'process';
-
+import Heading from '@/components/ui/Heading';
+import ContactForm from '@/components/ContactForm';
 function LandingPage() {
 
   const [formData, setFormData] = useState({
@@ -120,20 +121,98 @@ function LandingPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Contact Us</h2>
-          {/* Contact form will go here */}
+      {/* Contact Section */}
+<section className="py-20 px-4 bg-gray-50">
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center mb-16">
+      <Heading level={2} className="mb-4">
+        Get In Touch
+      </Heading>
+      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        Have questions about our services? We're here to help! 
+        Fill out the form and we'll get back to you within 24 hours.
+      </p>
+    </div>
+    
+    <div className="grid lg:grid-cols-2 gap-12 items-start">
+      {/* Contact Form */}
+      <div className="bg-white rounded-xl shadow-lg p-8">
+        <Heading level={3} className="mb-6">
+          Send us a message
+        </Heading>
+        <ContactForm 
+          onSubmit={async (data) => {
+            try {
+              const response = await fetch('YOUR_N8N_WEBHOOK_URL', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+              })
 
-          <div className='grid md:grid-cols-2 gap-12 '>
+              if (!response.ok) {
+                throw new Error('Network response was not ok')
+              }
+            } catch (error) {
+              throw new Error('Failed to submit form')
+            }
+          }}
+        />
+      </div>
 
-            <div>
-             {/* <form onSubmit={}></form> */}
+      {/* Contact Information */}
+      <div className="space-y-8">
+        {/* Contact Details Card */}
+        <div className="bg-white rounded-xl shadow-lg p-8">
+          <Heading level={3} className="mb-6">
+            Contact Information
+          </Heading>
+          
+          <div className="space-y-6">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Mail className="h-6 w-6 text-blue-600" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-lg mb-1">Email</h4>
+                <p className="text-gray-600">hello@autobooks.ph</p>
+                <p className="text-gray-600">support@autobooks.ph</p>
+                <p className="text-sm text-gray-500 mt-1">We respond within 24 hours</p>
+              </div>
             </div>
-            
+
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Phone className="h-6 w-6 text-green-600" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-lg mb-1">Phone</h4>
+                <p className="text-gray-600">+63 2 8888 8888</p>
+                <p className="text-sm text-gray-500 mt-1">Mon-Fri 9AM-6PM</p>
+              </div>
             </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <MapPin className="h-6 w-6 text-purple-600" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-lg mb-1">Office</h4>
+                <p className="text-gray-600">
+                  123 Business Center<br />
+                  Makati City, Metro Manila<br />
+                  Philippines 1200
+                </p>
+                <p className="text-sm text-gray-500 mt-1">By appointment only</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="py-12 px-4 bg-gray-900 text-white">
