@@ -1,75 +1,62 @@
+//CONTACTFORM.TSX
 'use client'
 
 import { useState } from 'react'
-import { Mail, Phone, MapPin, CheckCircle } from 'lucide-react'
 import Button from '@/components/ui/Button';
 
 interface ContactFormData {
-  name: string
+  name: string  
   email: string
   message: string
 }
 
 interface ContactFormProps {
-  onSubmit?: (data: ContactFormData) => Promise<void>
+  onSubmit: (data: ContactFormData) => Promise<void>
   className?: string
 }
 
 export default function ContactForm({ onSubmit, className = '' }: ContactFormProps) {
-  // State for form data
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     message: ''
   })
   
-  // State for form submission
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState('')
 
-  // Handle input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitMessage('')
 
     try {
-      if (onSubmit) {
-        await onSubmit(formData)
-        setSubmitMessage('Thank you for your message! We\'ll get back to you soon.')
-        setFormData({ name: '', email: '', message: '' })
-      } else {
-        // Default behavior if no onSubmit prop is provided
-        const response = await fetch('YOUR_N8N_WEBHOOK_URL', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData)
-        })
-
-        if (response.ok) {
-          setSubmitMessage('Thank you for your message! We\'ll get back to you soon.')
-          setFormData({ name: '', email: '', message: '' })
-        } else {
-          setSubmitMessage('Something went wrong. Please try again.')
-        }
-      }
+      await onSubmit(formData)
+      
+      // Show success message
+      setSubmitMessage('Thank you for your message! We\'ll get back to you soon.')
+      
+      // Clear the form
+      setFormData({ name: '', email: '', message: '' })
+      
     } catch (error) {
-      setSubmitMessage('Network error. Please check your connection.')
+      // Show error message
+      setSubmitMessage('Failed to send message. Please try again.')
+      console.error('Form submission error:', error)
     } finally {
       setIsSubmitting(false)
     }
   }
 
   return (
-    <div className={`space-y-6 ${className}`}>
+    <div className={`bg-white rounded-xl shadow-lg p-8 ${className}`}>
+      <h3 className="text-2xl font-semibold mb-6">Send us a message</h3>
+      
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium mb-2">
