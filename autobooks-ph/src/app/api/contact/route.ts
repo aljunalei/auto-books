@@ -10,7 +10,7 @@ export async function POST(request: Request) {
     console.log('📨 API Route received form data:', body);
 
     // Step 3: Forward the data to n8n webhook
-    const response = await fetch('https://alju.app.n8n.cloud/webhook/contact-form', {
+    const response = await fetch('https://alju.app.n8n.cloud/webhook/autobooks-contact-form', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -1,3 +1,4 @@
+//BUTTON.TSX
 "use client"
 
 // contract
@@ -27,7 +28,7 @@ const baseClasses = 'font-medium rounded-lg transition-colors focus:outline-none
     md: 'px-6 py-3 text-base',
     lg: 'px-8 py-4 text-lg'
   }
-  
+
     const variantClasses = {
     primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 disabled:opacity-50',
     secondary: 'bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-50 focus:ring-blue-500 disabled:opacity-50'
