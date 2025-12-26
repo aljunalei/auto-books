@@ -1,22 +1,11 @@
 //PAGE.TSX
 'use client';
 
-import { useState } from 'react';
-import { Mail, Phone, MapPin, CheckCircle, BarChart3, FileText, TrendingUp, Shield, icons } from 'lucide-react';
+import { Mail, Phone, MapPin, CheckCircle, BarChart3, FileText, TrendingUp } from 'lucide-react';
 import ServiceCard from '@/components/ui/ServiceCard';
-import { title } from 'process';
 import Heading from '@/components/ui/Heading';
 import ContactForm from '@/components/ContactForm';
 function LandingPage() {
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-
-  const [issubmitting, setIssubmitting] = useState(false);
-  const [submitmessage, setSubmitMessage] = useState("");
 
   const servicesData = [
     {
