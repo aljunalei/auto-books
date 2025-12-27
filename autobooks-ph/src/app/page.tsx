@@ -168,8 +168,8 @@ function LandingPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-lg mb-1">Email</h4>
-                      <p className="text-gray-600">hello@autobooks.ph</p>
-                      <p className="text-gray-600">support@autobooks.ph</p>
+                      <p className="text-gray-600">Autobooks@autobooks.ph</p>
+                      <p className="text-gray-600">Autobooks-support@autobooks.ph</p>
                       <p className="text-sm text-gray-500 mt-1">We respond within 24 hours</p>
                     </div>
                   </div>
@@ -180,7 +180,7 @@ function LandingPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-lg mb-1">Phone</h4>
-                      <p className="text-gray-600">+63 988 88 8888</p>
+                      <p className="text-gray-600">+63 945 770 0988</p>
                       <p className="text-sm text-gray-500 mt-1">Mon-Fri 9AM-6PM</p>
                     </div>
                   </div>
@@ -194,7 +194,7 @@ function LandingPage() {
                       <p className="text-gray-600">
                         079 Business Center<br />
                         Makati City, Metro Manila<br />
-                        Philippines 1200
+                        Philippines
                       </p>
                       <p className="text-sm text-gray-500 mt-1">By appointment only</p>
                     </div>
