@@ -12,7 +12,7 @@ export async function POST(request: Request) {
     const response = await fetch('https://alju.app.n8n.cloud/webhook/autobooks-contact-form', {
       method: 'POST',
       headers: {
-        contentType: 'application/json'
+        'content-type': 'application/json'
       },
       body: JSON.stringify(data)
     });
