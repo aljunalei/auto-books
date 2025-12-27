@@ -12,11 +12,11 @@ interface ServiceCardProps
         Classname?: string
     }
 function ServiceCard({
-title,
-description,
-features,
-icon,
-Classname
+    title,
+    description,
+    features,
+    icon,
+    Classname
 }: ServiceCardProps) {
 return(
     <div className={`bg-white rounded-lg shadow-md p-6 flex flex-col items-start ${Classname} hover:shadow-xl transition-shadow duration-300 relative`}>
