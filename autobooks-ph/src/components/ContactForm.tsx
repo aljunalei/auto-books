@@ -37,15 +37,13 @@
 
       try {
         await onSubmit(formData)
-        
-        // Show success message
+        //Confirmation message
         setSubmitMessage('Thank you for your message! We\'ll get back to you soon.')
         
         // Clear the form
         setFormData({ name: '', email: '', message: '' })
         
       } catch (error) {
-        // Show error message
         setSubmitMessage('Failed to send message. Please try again.')
         console.error('Form submission error:', error)
       } finally {
