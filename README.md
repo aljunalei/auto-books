@@ -49,4 +49,4 @@ Autobooks acts as a secure bridge between your users and your data tools.
 [You]}
 ```
 ## Demo & Walkthrough
-Vercel deployment: auto-books.vercel.app
+Vercel deployment: [auto-books.vercel.app](https://autobooks-ph.vercel.app/)
