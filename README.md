@@ -47,7 +47,7 @@ Autobooks acts as a secure bridge between your users and your data tools.
 [Email/DB/Automation]
   ↓ notification/storage
 [You]
-
+    ```
 ## Demo & Walkthrough
 
 If you would like to see Autobooks running in a production environment, please open an issue or contact me directly, and I will share the current Vercel URL.
