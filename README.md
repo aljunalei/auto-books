@@ -49,6 +49,4 @@ Autobooks acts as a secure bridge between your users and your data tools.
 [You]}
 ```
 ## Demo & Walkthrough
-
-If you would like to see Autobooks running in a production environment, please open an issue or contact me directly, and I will share the current Vercel URL.
-email: alfonsoaljunaleim4@gmail.com
+Vercel deployment: auto-books.vercel.app
