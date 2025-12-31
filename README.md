@@ -1,6 +1,6 @@
 # Autobooks
 
-Autobooks is a streamlined Next.js application designed to capture, validate, and route contact form submissions. Instead of dumping raw messages into an inbox, Autobooks provides structured data handling to ensure leads are validated and sent to the correct destination (Email, CRM, or Automation tools).
+Autobooks is a streamlined Next.js application designed to capture, validate, and route contact form submissions. Instead of dumping raw messages into an inbox, Autobooks provides structured data handling to ensure leads are validated and sent to the correct destination (Email, Airtable, and N8N).
 
 ## 🚀 What It Does
 
